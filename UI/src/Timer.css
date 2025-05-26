@@ -1,0 +1,128 @@
+body{
+  text-align: center;
+}
+
+.info {
+  text-align: left;
+}
+
+#timer{
+  font-size: large;
+ 
+}
+
+#button-start {
+  
+  margin: auto;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: larger;
+  
+}
+
+#button-pause, #button-stop
+{
+  width: 178px;
+}
+
+#name {
+  margin: auto;
+}
+
+li.section {
+  background-color: var(--bg-highlight);
+  color: inherit;
+  border-radius: 0.25rem 1rem 1rem 1rem;
+  padding: 10px;
+  margin: 10px;
+  border: 1px silver solid;
+}
+
+.saved-item > a 
+{
+  font-size: large;
+  }
+
+.saved-item {
+  background-color: var(--bg-highlight);
+  color: inherit;
+  border-radius: 1rem;
+  word-wrap: break-word;
+  text-align: left;
+  color: inherit;
+  border-radius: 0.25rem 1rem 1rem 1rem;
+  padding: 20px;
+  margin: 10px;
+  border: 1px silver solid;
+  overflow-wrap: break-word;
+ 
+}
+
+
+
+legend {
+  font-weight: bold;
+  font-size: larger;
+}
+
+details {
+  padding: 10px;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+}
+
+h3,
+p,
+button {
+  margin: 10px;
+}
+
+input,select {
+  margin: auto;
+  width: 85%;
+  border: 1px solid silver;
+}
+
+select {
+  font-size:medium;
+}
+
+label {
+  padding-left: 10px;
+}
+
+fieldset {
+  border-radius: 1rem;
+}
+
+.fa-trash {
+  font-size: larger;
+}
+
+.time-section > div {
+  padding: 10px;
+  padding-top: 0px;
+}
+
+@media (max-width: 850px) {
+  #button-start {
+    width: 100%;
+  }
+ 
+  #savedMeditations {
+    margin-bottom: 10px;
+  }
+
+  #button-stop{
+        margin-top: 0;
+  } 
+  
+}

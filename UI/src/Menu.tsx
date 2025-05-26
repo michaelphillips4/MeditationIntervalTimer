@@ -1,14 +1,17 @@
 import { NavLink } from "react-router";
-import "./Menu.css" 
+import "./Menu.css";
 export function Menu() {
   return (
     <nav className="center">
       <NavLink to="/" className="nav-item" end>
         Home
       </NavLink>
-      <NavLink to="/timer" className="nav-item">Timer</NavLink>
-      <NavLink to="/about" className="nav-item">About</NavLink>
-          
+      <NavLink to="/timer" className="nav-item">
+        Timer
+      </NavLink>
+      <NavLink to="/about" className="nav-item">
+        About
+      </NavLink>
     </nav>
   );
 }
