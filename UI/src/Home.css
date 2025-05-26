@@ -1,0 +1,41 @@
+.button:link, .button:visited {
+  background-color: var(--bg-highlight);
+  color: inherit;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  cursor:wait
+}
+
+.button:hover, .button:active {
+   background-color: var(--bg-highlight);
+  color:inherit;
+}
+
+blockquote {
+    font-size: larger;
+    font-style: italic;
+   
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 5px solid #ccc;
+    background-color: var(--bg-highlight);
+  color: inherit;
+}
+
+blockquote:before {
+    content: open-quote;
+  
+}
+
+blockquote:after {
+    content: close-quote;
+
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

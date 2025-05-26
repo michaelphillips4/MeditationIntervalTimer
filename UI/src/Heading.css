@@ -1,0 +1,25 @@
+header {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  background-color: black;
+  color: white;
+}
+
+#middle-lotus {
+  float: right;
+  padding-right: 10px;
+  display: none;
+}
+
+@media (max-width: 850px) {
+  #middle-lotus {
+    display: block;
+  }
+
+  #last-lotus {
+    display: none;
+  }
+}
