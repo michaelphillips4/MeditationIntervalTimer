@@ -10,4 +10,20 @@ interface SectionProps {
   updateSectionSound: (index: number, sound: string) => void;   
 }
 
-export type { Section,SectionProps }
+interface MeditationProps {
+  sections: Section[];
+  removeSection: (index: number) => void;
+  updateSectionTime: (index: number, time: number) => void;
+  updateSectionSound: (index: number, sound: string) => void;
+  addSection: () => void;
+  handleStart: () => void;
+  isRunning: boolean;
+  handlePause: () => void;
+  isPaused: boolean;
+  handleStop: () => void;
+  seconds: number;
+  currentSection: Section | null;}
+
+
+
+export type { Section,SectionProps,MeditationProps }

@@ -2,11 +2,10 @@ import Saved from "./Saved";
 import { useState, useEffect } from "react";
 import "./Timer.css";
 import type { Section } from "./types";
-import guruIcon from "./assets/images/meditation-guru.png";
-import MeditationSection from "./MeditationSection";
-import { FaPlus } from "react-icons/fa";
+
 import bowl from "./assets/sounds/Bowl.mp3";
 import bell from "./assets/sounds/Bell.mp3";
+import Meditation from "./Meditation/Meditation";
 
 function Timer() {
   const [seconds, setSeconds] = useState(0);
@@ -57,7 +56,7 @@ function Timer() {
       interval = setInterval(() => {
         if (!isPaused) {
           setSeconds((prevSeconds) => prevSeconds + 1);
-       
+
           if (seconds >= endOfSectionSeconds) {
             if (currentSection) {
               playSound(currentSection.sound);
@@ -65,12 +64,15 @@ function Timer() {
               const nextSectionIndex = sections.indexOf(currentSection) + 1;
 
               setCurrentSection(sections[nextSectionIndex]);
-                          
+
               setEndOfSectionSeconds(
                 (x) => x + sections[nextSectionIndex]?.time * 60
               );
 
-              if (currentSection === null || nextSectionIndex >= sections.length) {
+              if (
+                currentSection === null ||
+                nextSectionIndex >= sections.length
+              ) {
                 // If there are no more sections, stop the timer
                 clearInterval(interval);
                 setIsRunning(false);
@@ -105,66 +107,30 @@ function Timer() {
   };
 
   return (
-    <>
+
       <main>
-        
+
         <Saved />
 
-        <div id="meditation">
-          <fieldset>
-            <legend>&emsp;Meditation &emsp;</legend>
+       <Meditation
+         sections={sections}
+         removeSection={removeSection}
+         updateSectionTime={updateSectionTime}
+         updateSectionSound={updateSectionSound}
+         addSection={addSection}
+         isRunning={isRunning}
+         isPaused={isPaused}
+         currentSection={currentSection}
+         seconds={seconds}
+         handleStart={handleStart}
+         handlePause={handlePause}
+         handleStop={handleStop}
+       />
 
-            <ol id="stagesList">
-              {sections.map((section, index) => (
-                <li key={index} className="section">
-                  <MeditationSection
-                    section={section}
-                    index={index}
-                    removeSection={removeSection}
-                    updateSectionTime={updateSectionTime}
-                    updateSectionSound={updateSectionSound}
-                  />
-                </li>
-              ))}
-            </ol>
-
-            <button
-              onClick={addSection}
-              title="Add a Section of time, ending with a gong, to the meditation."
-              accessKey="n"
-            >
-              <FaPlus /> Add Another Section
-            </button>
-          </fieldset>
-
-          <div>
-            <button id="button-start" accessKey="s" onClick={handleStart}>
-              <img
-                width="48"
-                height="48"
-                src={guruIcon}
-                alt="meditation-guru"
-              />
-              <br />
-              Start Meditation
-            </button>
-            {isRunning && (
-              <>
-                <br />
-                <button onClick={handlePause}>
-                  {isPaused ? "Resume " : "Pause "} Meditation
-                </button>
-                <button onClick={handleStop}>Stop Meditation</button>
-                <p>
-                  {seconds} {currentSection?.time}{" "}
-                </p>
-              </>
-            )}
-          </div>
-        </div>
       </main>
-    </>
+ 
   );
 }
 
 export default Timer;
+
