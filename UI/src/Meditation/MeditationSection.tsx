@@ -1,5 +1,5 @@
 import { FaTrashAlt } from "react-icons/fa";
-import type { SectionProps } from "../types";
+import type { SectionProps } from "../typeDefinitions";
 
 const MeditationSection = (sectionProps: SectionProps) => {
   return (

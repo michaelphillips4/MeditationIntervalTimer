@@ -1,6 +1,5 @@
 import lotusImage from './assets/images/lotus.jpeg';
-import bowl from './assets/sounds/Bowl.mp3';
-import bell from './assets/sounds/Bell.mp3';
+import {bowl,bell } from "./Sounds";
 import "./About.css";
 
 function About() {
