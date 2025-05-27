@@ -1,21 +1,26 @@
 import Saved from "./Saved";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Timer.css";
 import type { Section } from "./types";
 import guruIcon from "./assets/images/meditation-guru.png";
 import MeditationSection from "./MeditationSection";
-import {FaPause, FaSave, FaPlus } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
- 
+import { FaPlus } from "react-icons/fa";
+import bowl from "./assets/sounds/Bowl.mp3";
+import bell from "./assets/sounds/Bell.mp3";
+
 function Timer() {
+  const [seconds, setSeconds] = useState(0);
+  const [endOfSectionSeconds, setEndOfSectionSeconds] = useState(0);
   const [lastSetTime, setLastSetTime] = useState(10);
   const [isRunning, setIsRunning] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentSection, setCurrentSection] = useState<Section | null>(null);
   const [sections, setSections] = useState<Section[]>([
     { time: 10, sound: "bowl" },
   ]);
 
   const addSection = () => {
-    const newSection: Section = { time: lastSetTime, sound: "bowl" }; // Default values
+    const newSection: Section = { time: lastSetTime, sound: "bowl" };
     setSections([...sections, newSection]);
   };
 
@@ -35,11 +40,74 @@ function Timer() {
     const newSections = [...sections];
     newSections[index].sound = sound;
     setSections(newSections);
+    playSound(sound);
+  };
+
+  const playSound = (sound: string) => {
+    const audio = new Audio(sound === "bowl" ? bowl : bell);
+    audio.play().catch((error) => {
+      console.error("Error playing sound:", error);
+    });
+  };
+
+  useEffect(() => {
+    let interval: number;
+
+    if (isRunning) {
+      interval = setInterval(() => {
+        if (!isPaused) {
+          setSeconds((prevSeconds) => prevSeconds + 1);
+       
+          if (seconds >= endOfSectionSeconds) {
+            if (currentSection) {
+              playSound(currentSection.sound);
+
+              const nextSectionIndex = sections.indexOf(currentSection) + 1;
+
+              setCurrentSection(sections[nextSectionIndex]);
+                          
+              setEndOfSectionSeconds(
+                (x) => x + sections[nextSectionIndex]?.time * 60
+              );
+
+              if (currentSection === null || nextSectionIndex >= sections.length) {
+                // If there are no more sections, stop the timer
+                clearInterval(interval);
+                setIsRunning(false);
+                setIsPaused(false);
+                setSeconds(0);
+              }
+            }
+          }
+        }
+      }, 250);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isRunning, isPaused, seconds, currentSection, endOfSectionSeconds]);
+
+  const handleStart = () => {
+    setEndOfSectionSeconds(sections[0].time * 60);
+    console.log("Setting end of section so: ", endOfSectionSeconds);
+    setCurrentSection(sections[0]);
+    setIsRunning(true);
+    setIsPaused(false);
+    setSeconds(0);
+  };
+
+  const handlePause = () => setIsPaused(!isPaused);
+
+  const handleStop = () => {
+    setIsRunning(false);
+    setIsPaused(false);
+    setSeconds(0);
   };
 
   return (
     <>
       <main>
+        
         <Saved />
 
         <div id="meditation">
@@ -69,12 +137,8 @@ function Timer() {
             </button>
           </fieldset>
 
-          <div id="run-buttons">
-            <button
-              id="button-start"
-              accessKey="s"
-              onClick={() => setIsRunning(true)}
-            >
+          <div>
+            <button id="button-start" accessKey="s" onClick={handleStart}>
               <img
                 width="48"
                 height="48"
@@ -87,21 +151,15 @@ function Timer() {
             {isRunning && (
               <>
                 <br />
-                <button id="button-pause">
-                  <FaPause /> Pause Meditation
+                <button onClick={handlePause}>
+                  {isPaused ? "Resume " : "Pause "} Meditation
                 </button>
-                <button id="button-stop">
-                  <IoClose /> Stop Meditation
-                </button>
-                <p id="timer"></p>
+                <button onClick={handleStop}>Stop Meditation</button>
+                <p>
+                  {seconds} {currentSection?.time}{" "}
+                </p>
               </>
             )}
-            <button
-              onClick={() => alert("saveMeditationDialog")}
-              title="This will save the time sections and name for future use. Saved meditations will be listed in the Saved meditations section at the top of the form. The Saved meditation area is only shown if there are saved meditations. Note currently any saved mediation are only currently stored in the browsers local storage."
-            >
-              <FaSave /> Save
-            </button>
           </div>
         </div>
       </main>

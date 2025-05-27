@@ -6,6 +6,7 @@ body{
   text-align: left;
 }
 
+
 #timer{
   font-size: large;
  
@@ -22,7 +23,7 @@ body{
 
 #button-pause, #button-stop
 {
-  width: 178px;
+  width: 200px;
 }
 
 #name {
@@ -111,6 +112,7 @@ fieldset {
   padding: 10px;
   padding-top: 0px;
 }
+
 
 @media (max-width: 850px) {
   #button-start {

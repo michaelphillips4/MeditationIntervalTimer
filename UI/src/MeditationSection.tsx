@@ -13,7 +13,6 @@ const MeditationSection = (sectionProps: SectionProps) => {
             onClick={() => sectionProps.removeSection(sectionProps.index)}
             title="Remove this section from the meditation."
             role="button"
-            tabIndex={0}
           >
             <FaTrashAlt />
           </span>

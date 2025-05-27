@@ -6,7 +6,7 @@
   text-decoration: none;
   display: inline-block;
   border-radius: 12px;
-  cursor:wait
+  cursor:pointer
 }
 
 .button:hover, .button:active {
