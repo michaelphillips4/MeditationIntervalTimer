@@ -1,3 +1,22 @@
+# Meditation Timer
+
+This is a simple timer that allows a number of sections to a meditation.
+It plays a sound at the end of each section of meditation.
+
+## Saving meditations
+
+You can save a mediation and its sections. They are simply saved in the browsers local storage,
+
+## Screen lock request
+
+There is a request in the code to stop the device going into sleep mode. This is released once the meditation completes or is manually stopped. 
+
+
+## Deployment 
+
+The git hub branch main will deploy the code to AWS Amplify
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

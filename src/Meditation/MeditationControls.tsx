@@ -1,7 +1,7 @@
 import type {MeditationControlsProps, Section } from "../typeDefinitions";
 import guruIcon from "../assets/images/meditation-guru.png";
 import { useEffect, useState } from "react";
-import { playSound } from "../Sounds";
+import { playSound, preloadSounds } from "../Sounds";
 import FadeOutText from "../FadeOutText";
 import { releaseWakeLock, setWakeLock } from "../wakeLock";
 
@@ -61,6 +61,8 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
   }, [isRunning, isPaused, seconds, currentSection, endOfSectionSeconds]);
 
   const handleStart = () => {
+    preloadSounds();
+    setIsCompleted(false);
     setWakeLock();
     setEndOfSectionSeconds(meditationControlProps.sections[0].duration * 60);
     console.log("Setting end of section so: ", endOfSectionSeconds);
