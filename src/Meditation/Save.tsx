@@ -55,7 +55,7 @@ const Save = (meditationSaveProps: MeditationSaveProps) => {
         Save
       </button>
       {saved && (
-        <FadeOutText text="Meditation saved successfully!" duration={3000} />
+        <FadeOutText text="Meditation saved successfully! You will see it listed in the Saved Section." duration={3000} />
       )}
 
     </div>

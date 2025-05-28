@@ -37,7 +37,7 @@ const Saved = () => {
 
   return (
     <main>
-      <h3>Load a Saved Meditation</h3>
+      <h3>Saved Meditations</h3>
 
 {items.length ===0 && 
 <FadeOutText text={"You haven't saved any meditations yet. When you do they will be listed here. To Save a meditation create one in Timer and press the Save button. "} duration={12000} />}
@@ -62,7 +62,7 @@ const Saved = () => {
                
               </div>
               <div className="saved-item-last">
-                <i onClick={() => removeMeditation(meditation)}>
+                <i className="fa fa-trash section-remove right" title="Remove this meditation ." role="button"  onClick={() => removeMeditation(meditation)}>
                   <FaTrashAlt />
                 </i>
               </div>
