@@ -1,0 +1,37 @@
+.saved-item {
+  background-color: var(--bg-highlight);
+  border-radius: 0.25rem 1rem 1rem 1rem;
+  margin: 10px;
+  margin-bottom: 20px;
+  border: 1px silver solid;
+}
+
+.saved-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.saved-item-first {
+  align-self: center;
+}
+
+.saved-item-last {
+  align-self: center;
+  padding: 10px;
+}
+
+.saved-item-text {
+  flex-grow: 8;
+  align-self: center;
+  overflow-wrap: break-word;
+  max-width: 40vw;
+  text-align: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.fade-out-text{
+   text-align: left;
+}

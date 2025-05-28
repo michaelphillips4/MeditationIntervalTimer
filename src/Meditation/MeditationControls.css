@@ -1,0 +1,28 @@
+
+.time{
+  font-size: large;
+ 
+}
+
+#button-start {
+  
+  margin: auto;
+  margin-top: 10px;
+  font-weight: bolder;
+  font-size: larger;
+  
+}
+
+#button-pause, #button-stop
+{
+  width: 200px;
+}
+
+
+@media (max-width: 850px) {
+  #button-start {
+    width: 100%;
+  }
+ 
+   
+}

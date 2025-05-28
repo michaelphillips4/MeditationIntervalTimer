@@ -1,9 +1,13 @@
 code 
 {width: 90%;
   margin: 0 auto;
- 
+ word-wrap: break-word;
 }
 
 .copy-button {
   float: right;
+}
+
+p{
+  text-align: left;
 }

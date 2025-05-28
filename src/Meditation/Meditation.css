@@ -1,0 +1,69 @@
+li.section {
+  background-color: var(--bg-highlight);
+  color: inherit;
+  border-radius: 0.25rem 1rem 1rem 1rem;
+  padding: 10px;
+  margin: 10px;
+  border: 1px silver solid;
+}
+
+
+fieldset {
+  border-radius: 1rem;
+}
+
+legend {
+  font-weight: bold;
+  font-size: larger;
+  max-width: 70vw;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+.fa-trash {
+  font-size: larger;
+}
+
+.fa-trash:hover {
+  cursor: pointer;
+}
+
+ol {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+input,select {
+  margin: auto;
+  width: 85%;
+  border: 1px solid silver;
+}
+
+select {
+  font-size:medium;
+}
+
+label {
+  padding-left: 10px;
+}
+
+
+p,
+button {
+  margin: 10px;
+}
+
+
+@media (max-width: 850px) {
+legend {
+ 
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+} 
+
+  

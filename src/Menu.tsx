@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import "./Menu.css";
+
 export function Menu() {
   return (
     <nav className="center">
@@ -8,6 +9,9 @@ export function Menu() {
       </NavLink>
       <NavLink to="/timer" className="nav-item">
         Timer
+      </NavLink>
+      <NavLink to="/Saved" className="nav-item">
+        Saved
       </NavLink>
       <NavLink to="/about" className="nav-item">
         About

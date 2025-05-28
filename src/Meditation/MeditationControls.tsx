@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { playSound, preloadSounds } from "../Sounds";
 import FadeOutText from "../FadeOutText";
 import { releaseWakeLock, setWakeLock } from "../wakeLock";
+import "./MeditationControls.css";
 
 const MeditationControls = (meditationControlProps: MeditationControlsProps) => {
   const [seconds, setSeconds] = useState(0);
@@ -53,7 +54,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
             }
           }
         }
-      }, 100); // Update every second
+      }, 1000); // Update every second
     }
     return () => {
       clearInterval(interval);
@@ -100,14 +101,15 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
             {isPaused ? "Resume " : "Pause "} Meditation
           </button>
           <button onClick={handleStop}>Stop Meditation</button>
+          <div className="time"> 
           <p>
             Current Section <b>{currentSection && meditationControlProps.sections.indexOf(currentSection) + 1}</b> of {meditationControlProps.sections.length} (Section Duration: {currentSection ? currentSection.duration : 0} mins)
-            </p>
-            <span className="time">
+          </p> 
+            <span>
             Total Meditation Time <b>{Math.floor(seconds / 60)}:
-              {(seconds % 60).toString().padStart(2, "0")}</b>  of {meditationControlProps.sections.reduce((x, y) => x + y.duration, 0)} mins
+              {(seconds % 60).toString().padStart(2, "0")}</b> mins of {meditationControlProps.sections.reduce((x, y) => x + y.duration, 0)} mins
             </span>
-        
+         </div>
         </>
       )}
       {isCompleted && (

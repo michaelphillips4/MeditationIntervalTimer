@@ -11,7 +11,7 @@ interface SectionProps {
 interface MeditationProps {
   sections: Section[];
   setSections: (sections: Section[]) => void;
-
+  name:string;
 }
 
 interface MeditationControlsProps {
@@ -20,6 +20,10 @@ interface MeditationControlsProps {
 
 interface MeditationSaveProps {
   sections: Section[];
+}
+
+interface MeditationLoadProps {
+    setSections: (sections: Section[]) => void;
 }
 
 interface StorageMeditation{
@@ -33,6 +37,6 @@ interface StorageMeditations {
   
 }
 
-export type { Section, SectionProps, MeditationProps, MeditationControlsProps, MeditationSaveProps, StorageMeditation, StorageMeditations };
+export type { Section, SectionProps, MeditationProps, MeditationControlsProps, MeditationSaveProps, StorageMeditation, StorageMeditations, MeditationLoadProps };
 
 

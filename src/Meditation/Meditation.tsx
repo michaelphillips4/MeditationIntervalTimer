@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { MeditationProps,Section } from "../typeDefinitions";
-//import "./Timer.css";
+import "./Meditation.css";
 import { playSound } from "../Sounds";
 import MeditationSection from "./MeditationSection";
 import { FaPlus } from "react-icons/fa";
@@ -36,9 +36,9 @@ const Meditation = (meditationProps: MeditationProps) => {
   return (
   
       <fieldset>
-        <legend>&emsp;Meditation &emsp;</legend>
+        <legend>{meditationProps.name}</legend>
 
-        <ol id="stagesList">
+        <ol>
           {meditationProps.sections.map((section, index) => (
             <li key={index} className="section">
               <MeditationSection
