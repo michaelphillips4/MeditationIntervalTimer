@@ -4,7 +4,7 @@ import Home from './Home';
 import About from './About';
 import Timer from './Timer';
 import Saved from './Meditation/Saved';
-
+import "./App.css";
 
 const App = () => (
   
