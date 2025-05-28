@@ -6,7 +6,7 @@ const MeditationSection = (sectionProps: SectionProps) => {
     <>
       <div>
         <label className="section-range-label">
-          <span className="section-time">{sectionProps.section.time}</span>
+          <span className="section-time">{sectionProps.section.duration}</span>
           minutes
           <span
             className="fa fa-trash section-remove right"
@@ -25,7 +25,7 @@ const MeditationSection = (sectionProps: SectionProps) => {
           step="1"
           min="1"
           max="60"
-          value={sectionProps.section.time}
+          value={sectionProps.section.duration}
           onChange={(e) =>
             sectionProps.updateSectionTime(
               sectionProps.index,

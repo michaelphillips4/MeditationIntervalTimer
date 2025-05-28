@@ -9,7 +9,7 @@ import Save from "./Meditation/Save";
 
 function Timer() {
   const [sections, setSections] = useState<Section[]>([
-    { time: 10, sound: "bowl" },
+    { duration: 10, sound: "bowl" },
   ]);
 
   return (

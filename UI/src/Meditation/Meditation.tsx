@@ -9,7 +9,7 @@ const Meditation = (meditationProps: MeditationProps) => {
  const [lastSetTime, setLastSetTime] = useState(10);
 
   const addSection = () => {
-    const newSection: Section = { time: lastSetTime, sound: "bowl" };
+    const newSection: Section = { duration: lastSetTime, sound: "bowl" };
     meditationProps.setSections([...meditationProps.sections, newSection]);
   };
 
@@ -20,7 +20,7 @@ const Meditation = (meditationProps: MeditationProps) => {
 
   const updateSectionTime = (index: number, time: number) => {
     const newSections = [...meditationProps.sections];
-    newSections[index].time = time;
+    newSections[index].duration = time;
     setLastSetTime(time);
     meditationProps.setSections(newSections);
   };

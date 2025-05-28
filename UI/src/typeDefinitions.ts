@@ -1,4 +1,4 @@
-type Section = { time: number; sound: string };
+type Section = { duration: number; sound: string };
 
 interface SectionProps {
   section: Section;
@@ -23,7 +23,7 @@ interface MeditationSaveProps {
 }
 
 interface StorageMeditation{
-  sections: Section[];
+  stages: Section[];
   name: string;
   date: string; 
 }
