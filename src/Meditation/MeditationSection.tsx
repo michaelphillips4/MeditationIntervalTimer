@@ -6,8 +6,7 @@ const MeditationSection = (sectionProps: SectionProps) => {
     <>
       <div>
         <label className="section-range-label">
-          <span className="section-time">{sectionProps.section.duration}</span>
-          minutes
+          <span className="section-time">{sectionProps.section.duration}</span> minutes
           <span
             className="fa fa-trash section-remove right"
             onClick={() => sectionProps.removeSection(sectionProps.index)}

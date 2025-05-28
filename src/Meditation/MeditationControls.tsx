@@ -53,7 +53,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
             }
           }
         }
-      }, 1000); // Update every second
+      }, 100); // Update every second
     }
     return () => {
       clearInterval(interval);
