@@ -36,7 +36,7 @@ const Meditation = (meditationProps: MeditationProps) => {
   return (
   
       <fieldset>
-        <legend>{meditationProps.name}</legend>
+        <legend>{meditationProps.name.substring(0,40)}</legend>
 
         <ol>
           {meditationProps.sections.map((section, index) => (
