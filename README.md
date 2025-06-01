@@ -1,5 +1,7 @@
 # Meditation Timer
 
+https://www.meditationintervaltimer.co.uk/
+
 This is a simple timer that allows a number of sections to a meditation.
 It plays a sound at the end of each section of meditation.
 
