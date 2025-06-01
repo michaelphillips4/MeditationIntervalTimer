@@ -7,7 +7,20 @@ It plays a sound at the end of each section of meditation.
 
 You can save a mediation and its sections. They are simply saved in the browsers local storage,
 
-## Screen lock request
+
+## PWA 
+
+This is a PWA and will work once downloaded offline. This is achieved using the `vite-pwa-plugin`
+https://www.npmjs.com/package/vite-plugin-pwa . Note it seemed to work much better if the a images and sounds were stored in the public folder.
+
+## Oddities and Gotchas
+
+### Playing sounds 
+
+On apple devices there is a restriction where sounds can only be played if the user directly interact with the app. This is a problem for playing sounds at the end of intervals. I have been able to get round this by loading all the sounds into a map and then starting then pausing them immediately.
+Be aware of this and always call the `preloadSounds()` method `sounds.ts` before using sounds that are played programmatically.
+
+### Screen lock request
 
 There is a request in the code to stop the device going into sleep mode. This is released once the meditation completes or is manually stopped. 
 

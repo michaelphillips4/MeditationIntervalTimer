@@ -1,5 +1,5 @@
 import "./Heading.css";
-import lotus from "./assets/images/lotus.png";
+import lotus from "/images/lotus.png";
 
 const Heading = () => (
   <header>

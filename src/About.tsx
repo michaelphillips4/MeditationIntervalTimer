@@ -1,4 +1,4 @@
-import lotusImage from './assets/images/lotus.jpeg';
+import lotusImage from '/images/lotus.jpeg';
 import {bowl,bell } from "./Sounds";
 import "./About.css";
 

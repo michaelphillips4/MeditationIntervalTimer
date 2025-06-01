@@ -1,5 +1,5 @@
 import type {MeditationControlsProps, Section } from "../typeDefinitions";
-import guruIcon from "../assets/images/meditation-guru.png";
+import guruIcon from "/images/meditation-guru.png";
 import { useEffect, useState } from "react";
 import { playSound, preloadSounds } from "../Sounds";
 import FadeOutText from "../FadeOutText";

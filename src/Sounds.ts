@@ -1,5 +1,5 @@
-import bowl from "./assets/sounds/Bowl.mp3";
-import bell from "./assets/sounds/Bell.mp3";
+import bowl from "../public/sounds/Bowl.mp3";
+import bell from "../public/sounds/Bell.mp3";
 
 const soundsMap = new Map<string,HTMLAudioElement>() ;
 soundsMap.set("bell", new Audio(bell));

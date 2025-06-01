@@ -4,6 +4,10 @@
  
 }
 
+.time > p{
+ text-align: center;
+}
+
 #button-start {
   
   margin: auto;
