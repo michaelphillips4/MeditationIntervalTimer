@@ -2,6 +2,8 @@
 
 https://www.meditationintervaltimer.co.uk/
 
+https://meditationtimer.orca-tools.com/
+
 This is a simple timer that allows a number of sections to a meditation.
 It plays a sound at the end of each section of meditation.
 
