@@ -33,6 +33,8 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
                 meditationControlProps.sections[nextSectionIndex]
               );
 
+              meditationControlProps.setCurrentSectionIndex(nextSectionIndex);
+
               setEndOfSectionSeconds(
                 (x) =>
                   x +
@@ -49,6 +51,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
                 setIsPaused(false);
                 setSeconds(0);
                 setIsCompleted(true);
+                meditationControlProps.setCurrentSectionIndex(-1);
                 releaseWakeLock
               }
             }
@@ -68,6 +71,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
     setEndOfSectionSeconds(meditationControlProps.sections[0].duration * 60);
     console.log("Setting end of section so: ", endOfSectionSeconds);
     setCurrentSection(meditationControlProps.sections[0]);
+    meditationControlProps.setCurrentSectionIndex(0);
     setIsRunning(true);
     setIsPaused(false);
     setSeconds(0);
@@ -79,6 +83,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
     setIsRunning(false);
     setIsPaused(false);
     setSeconds(0);
+    meditationControlProps.setCurrentSectionIndex(-1);
     releaseWakeLock();
   };
 

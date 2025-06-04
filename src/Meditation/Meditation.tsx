@@ -40,7 +40,7 @@ const Meditation = (meditationProps: MeditationProps) => {
 
         <ol>
           {meditationProps.sections.map((section, index) => (
-            <li key={index} className="section">
+            <li key={index} className={`section ${meditationProps.currentSectionIndex === index ? 'current-section':''}`}>
               <MeditationSection
                 section={section}
                 index={index}

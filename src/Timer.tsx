@@ -7,6 +7,7 @@ import Save from "./Meditation/Save";
 import { useLocation } from "react-router-dom";
 
 function Timer() {
+  const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(-1);
   const [name, setName] = useState("Meditation ");
   const [sections, setSections] = useState<Section[]>([
     { duration: 10, sound: "bowl" },
@@ -23,8 +24,18 @@ function Timer() {
 
   return (
     <main>
-      <Meditation sections={sections} setSections={setSections} name={name}/>
-      <MeditationControls sections={sections} />
+      <Meditation
+        sections={sections}
+        setSections={setSections}
+        name={name}
+        currentSectionIndex={currentSectionIndex}
+        setCurrentSectionIndex={setCurrentSectionIndex}
+      />
+      <MeditationControls
+        sections={sections}
+        currentSectionIndex={currentSectionIndex}
+        setCurrentSectionIndex={setCurrentSectionIndex}
+      />
       <Save sections={sections} />
     </main>
   );

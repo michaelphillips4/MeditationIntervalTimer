@@ -12,10 +12,14 @@ interface MeditationProps {
   sections: Section[];
   setSections: (sections: Section[]) => void;
   name:string;
+   currentSectionIndex:number;
+  setCurrentSectionIndex: (currentSectionIndex:number) => void;
 }
 
 interface MeditationControlsProps {
   sections: Section[];
+  currentSectionIndex:number;
+  setCurrentSectionIndex: (currentSectionIndex:number) => void;
 }
 
 interface MeditationSaveProps {

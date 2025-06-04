@@ -7,6 +7,9 @@ li.section {
   border: 1px silver solid;
 }
 
+li.section.current-section{
+  border: 4px silver dotted;
+}
 
 fieldset {
   border-radius: 1rem;
@@ -39,10 +42,12 @@ input,select {
   margin: auto;
   width: 85%;
   border: 1px solid silver;
+  padding: 5px;
 }
 
 select {
   font-size:medium;
+
 }
 
 label {
