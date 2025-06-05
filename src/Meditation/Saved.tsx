@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import {
   readFromLocalStorage,
   removeMeditationFromLocalStorage,
-} from "../localStorage";
-import type { StorageMeditation } from "../typeDefinitions";
+} from "../Utils/localStorage";
+import type { StorageMeditation } from "../Utils/typeDefinitions";
 import "./Saved.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

@@ -1,7 +1,7 @@
 import { useState } from "react";
-import type { MeditationProps,Section } from "../typeDefinitions";
+import type { MeditationProps,Section } from "../Utils/typeDefinitions";
 import "./Meditation.css";
-import { playSound } from "../Sounds";
+import { playSound } from "../Utils/Sounds";
 import MeditationSection from "./MeditationSection";
 import { FaPlus } from "react-icons/fa";
 
@@ -38,7 +38,7 @@ const Meditation = (meditationProps: MeditationProps) => {
       <fieldset>
         <legend>{meditationProps.name.substring(0,40)}</legend>
 
-        <ol>
+        <ol className="meditation-sections">
           {meditationProps.sections.map((section, index) => (
             <li key={index} className={`section ${meditationProps.currentSectionIndex === index ? 'current-section':''}`}>
               <MeditationSection

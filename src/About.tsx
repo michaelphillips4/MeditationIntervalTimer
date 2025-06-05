@@ -1,4 +1,4 @@
-import { bowl, bell } from "./Sounds";
+import { bowl, bell } from "./Utils/Sounds";
 import "./About.css";
 import RandomImage from "./RandomImage";
 import { NavLink } from "react-router-dom";

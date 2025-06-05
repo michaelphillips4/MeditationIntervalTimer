@@ -1,7 +1,7 @@
-import type {MeditationControlsProps, Section } from "../typeDefinitions";
+import type {MeditationControlsProps, Section } from "../Utils/typeDefinitions";
 import guruIcon from "/images/meditation-guru.png";
 import { useEffect, useState } from "react";
-import { playSound, preloadSounds } from "../Sounds";
+import { playSound, preloadSounds } from "../Utils/Sounds";
 import FadeOutText from "../FadeOutText";
 import { releaseWakeLock, setWakeLock } from "../wakeLock";
 import "./MeditationControls.css";

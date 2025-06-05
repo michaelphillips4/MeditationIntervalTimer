@@ -31,7 +31,7 @@ legend {
   cursor: pointer;
 }
 
-ol.section {
+ol.meditation-sections {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -60,6 +60,9 @@ button {
   margin: 10px;
 }
 
+.section-index{
+  float: left;
+}
 
 @media (max-width: 850px) {
 legend {

@@ -1,11 +1,18 @@
 import { FaTrashAlt } from "react-icons/fa";
-import type { SectionProps } from "../typeDefinitions";
+import type { SectionProps } from "../Utils/typeDefinitions";
+
+
+
+
 
 const MeditationSection = (sectionProps: SectionProps) => {
+  const rangeInputId = "range-" + sectionProps.index;
+ 
   return (
     <>
       <div>
-        <label className="section-range-label">
+        <span className="section-index">{sectionProps.index+1}</span>
+        <label className="section-range-label" htmlFor={rangeInputId}>
           <span className="section-time">{sectionProps.section.duration}</span> minutes
           <span
             className="fa fa-trash section-remove right"
@@ -19,6 +26,7 @@ const MeditationSection = (sectionProps: SectionProps) => {
       </div>
       <div className="center">
         <input
+          id={rangeInputId}
           className="time-range"
           type="range"
           step="1"

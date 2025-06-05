@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./Timer.css";
-import type { Section, StorageMeditation } from "./typeDefinitions";
+import type { Section, StorageMeditation } from "./Utils/typeDefinitions";
 import Meditation from "./Meditation/Meditation";
 import MeditationControls from "./Meditation/MeditationControls";
 import Save from "./Meditation/Save";

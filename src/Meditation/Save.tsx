@@ -3,8 +3,8 @@ import "./Save.css";
 import type {
   MeditationSaveProps,
   StorageMeditation,
-} from "../typeDefinitions";
-import { addToLocalStorage } from "../localStorage";
+} from "../Utils/typeDefinitions";
+import { addToLocalStorage } from "../Utils/localStorage";
 import FadeOutText from "../FadeOutText";
 
 const Save = (meditationSaveProps: MeditationSaveProps) => {
