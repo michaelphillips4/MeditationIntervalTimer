@@ -1,12 +1,18 @@
-import type {MeditationControlsProps, Section } from "../Utils/typeDefinitions";
+import type {
+  MeditationControlsProps,
+  Section,
+} from "../Utils/typeDefinitions";
 import guruIcon from "/images/meditation-guru.png";
 import { useEffect, useState } from "react";
 import { playSound, preloadSounds } from "../Utils/Sounds";
 import FadeOutText from "../FadeOutText";
-import { releaseWakeLock, setWakeLock } from "../wakeLock";
+import { releaseWakeLock, setWakeLock } from "../Utils/wakeLock";
 import "./MeditationControls.css";
+import ProgressBar from "@ramonak/react-progress-bar";
 
-const MeditationControls = (meditationControlProps: MeditationControlsProps) => {
+const MeditationControls = (
+  meditationControlProps: MeditationControlsProps
+) => {
   const [seconds, setSeconds] = useState(0);
   const [endOfSectionSeconds, setEndOfSectionSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -24,7 +30,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
 
           if (seconds >= endOfSectionSeconds) {
             if (currentSection) {
-             playSound(currentSection.sound);
+              playSound(currentSection.sound);
 
               const nextSectionIndex =
                 meditationControlProps.sections.indexOf(currentSection) + 1;
@@ -38,7 +44,8 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
               setEndOfSectionSeconds(
                 (x) =>
                   x +
-                  meditationControlProps.sections[nextSectionIndex]?.duration * 60
+                  meditationControlProps.sections[nextSectionIndex]?.duration *
+                    60
               );
 
               if (
@@ -52,7 +59,7 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
                 setSeconds(0);
                 setIsCompleted(true);
                 meditationControlProps.setCurrentSectionIndex(-1);
-                releaseWakeLock
+                releaseWakeLock;
               }
             }
           }
@@ -106,20 +113,40 @@ const MeditationControls = (meditationControlProps: MeditationControlsProps) => 
             {isPaused ? "Resume " : "Pause "} Meditation
           </button>
           <button onClick={handleStop}>Stop Meditation</button>
-          <div className="time"> 
-          <p>
-            Current Section <b>{currentSection && meditationControlProps.sections.indexOf(currentSection) + 1}</b> of {meditationControlProps.sections.length} (Section Duration: {currentSection ? currentSection.duration : 0} mins)
-          </p> 
+          <div className="time">
+            <p>
+              Current Section <b>{currentSection &&
+                  meditationControlProps.sections.indexOf(currentSection) + 1}
+              </b> of {meditationControlProps.sections.length} (Section Duration:
+              {currentSection ? currentSection.duration : 0} mins)
+            </p>
             <span>
-            Total Meditation Time <b>{Math.floor(seconds / 60)}:
-              {(seconds % 60).toString().padStart(2, "0")}</b> mins of {meditationControlProps.sections.reduce((x, y) => x + y.duration, 0)} mins
+              Total Meditation Time <b>
+                {Math.floor(seconds / 60)}:
+                {(seconds % 60).toString().padStart(2, "0")}
+              </b> of {meditationControlProps.sections.reduce(
+                (x, y) => x + y.duration,
+                0
+              )} mins
             </span>
-         </div>
+           <br />
+         
+            <ProgressBar
+              completed={Math.floor(seconds / meditationControlProps.sections.reduce(
+                (x, y) => x + y.duration * 60,
+                0 ) * 100)}
+              bgColor="#c8eaf2"
+    baseBgColor="#f4f4f4"
+    labelColor="#070707"
+                        animateOnRender
+              
+            />
+        
+          </div>
         </>
       )}
       {isCompleted && (
         <FadeOutText text="Meditation Completed!" duration={8000} />
-        
       )}
     </>
   );
