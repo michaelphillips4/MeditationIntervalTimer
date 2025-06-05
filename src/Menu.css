@@ -1,15 +1,18 @@
 nav {
-  padding: 10px;
-  padding-bottom: 0px;
+  padding: 0;
+  padding-bottom: 10px;
 }
 
 .nav-item {
-  padding-left: 10px;
+  margin-left: 10px;
 }
 
-a {
+a.nav-item{
+  color: rgb(172, 172, 172);
   text-decoration: none;
 }
+
 a.active {
-  text-decoration: underline;
+  color: white;
+  border-bottom: 2px  rgb(172, 172, 172) solid;
 }

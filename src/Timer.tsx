@@ -5,6 +5,8 @@ import Meditation from "./Meditation/Meditation";
 import MeditationControls from "./Meditation/MeditationControls";
 import Save from "./Meditation/Save";
 import { useLocation } from "react-router-dom";
+import RandomImage from "./RandomImage";
+import RandomQuote from "./Quotes/RandomQuote";
 
 function Timer() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(-1);
@@ -37,6 +39,8 @@ function Timer() {
         setCurrentSectionIndex={setCurrentSectionIndex}
       />
       <Save sections={sections} />
+      <RandomQuote />
+      <RandomImage />
     </main>
   );
 }

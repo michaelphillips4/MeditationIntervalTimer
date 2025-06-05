@@ -6,22 +6,17 @@ header {
   padding-bottom: 1px;
   background-color: black;
   color: white;
+
 }
 
-#middle-lotus {
-  float: right;
-  padding-right: 10px;
-  display: none;
+.heading-container {
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 850px) {
-  #middle-lotus {
-    display: block;
-  }
-
-  #last-lotus {
-    display: none;
-  }
+.lotus{
+  padding: 0 4vw;
+  align-self: center
 }
 
 
@@ -29,4 +24,6 @@ header {
     main {
         max-width: 800px;
     }
+
+   
 }

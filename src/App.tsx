@@ -5,6 +5,8 @@ import About from './About';
 import Timer from './Timer';
 import Saved from './Meditation/Saved';
 import "./App.css";
+import Quotes from './Quotes/Quotes';
+import Images from './Images';
 
 const App = () => (
   
@@ -12,7 +14,9 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/timer" element={<Timer />} />
-       <Route path="/saved" element={<Saved />} />
+      <Route path="/saved" element={<Saved />} />
+      <Route path="/quotes" element={<Quotes />} />
+      <Route path="/images" element={<Images />} />
     </Routes>
   
 );

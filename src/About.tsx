@@ -1,6 +1,7 @@
-import lotusImage from "/images/lotus.jpeg";
 import { bowl, bell } from "./Sounds";
 import "./About.css";
+import RandomImage from "./RandomImage";
+import { NavLink } from "react-router-dom";
 
 function About() {
   return (
@@ -32,6 +33,15 @@ function About() {
             Your browser does not support the audio element.
           </audio>
         </p>
+         <h2>Lists</h2>
+        <ul >
+          <li >
+            <NavLink to="/quotes" className="left">Quotes</NavLink>
+          </li>
+          <li >
+            <NavLink to="/images" className="left">Images</NavLink>
+          </li>
+        </ul>
         <h2>Saved Meditations</h2>
         <p>
           You can save your meditation to use them again later. Click on the
@@ -75,18 +85,15 @@ function About() {
         <h2>Bug Log and Comments</h2>
         <p>
           Please add any comments of bugs via the link below. Please create a
-          login if using it for the first time.
+          login if using it for the first time.{" "}
           <a href="https://main.d8oy8keixqflp.amplifyapp.com/" target="_blank">
-            Click here to add Log a fault/bug or add comments{" "}
+            Click here
           </a>
         </p>
-        <div className="center">
-          <img src={lotusImage} alt="lotus" className="app-image center" />
+       
 
-          <p>
-            v2 By Michael Phillips
-            <a href="http:\\orca-tools.com">http:\\orca-tools.com</a>
-          </p>
+        <div className="center">
+          <RandomImage />
         </div>
       </main>
     </>
