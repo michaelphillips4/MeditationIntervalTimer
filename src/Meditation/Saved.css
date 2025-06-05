@@ -1,7 +1,6 @@
 .saved-item {
   background-color: var(--bg-highlight);
   border-radius: 0.25rem 1rem 1rem 1rem;
-  margin: 10px;
   margin-bottom: 20px;
   border: 1px silver solid;
 }
@@ -26,7 +25,7 @@
   flex-grow: 8;
   align-self: center;
   overflow-wrap: break-word;
-  max-width: 40vw;
+  max-width: 38vw;
   text-align: left;
   padding-top: 5px;
   padding-bottom: 5px;
