@@ -120,7 +120,7 @@ const MeditationControls = (
               </b> of {meditationControlProps.sections.length} (Section Duration:
               {currentSection ? currentSection.duration : 0} mins)
             </p>
-            <span>
+            <p>
               Total Meditation Time <b>
                 {Math.floor(seconds / 60)}:
                 {(seconds % 60).toString().padStart(2, "0")}
@@ -128,8 +128,8 @@ const MeditationControls = (
                 (x, y) => x + y.duration,
                 0
               )} mins
-            </span>
-           <br />
+            </p>
+        
          
             <ProgressBar
               completed={Math.floor(seconds / meditationControlProps.sections.reduce(
