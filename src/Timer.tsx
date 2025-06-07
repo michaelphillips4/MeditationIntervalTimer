@@ -1,9 +1,8 @@
 import { useEffect, useState } from "react";
-import "./Timer.css";
 import type { Section, StorageMeditation } from "./Utils/typeDefinitions";
 import Meditation from "./Meditation/Meditation";
 import MeditationControls from "./Meditation/MeditationControls";
-import Save from "./Meditation/Save";
+import OpenSaveDialogButton from "./Meditation/OpenSaveDialogButton";
 import { useLocation } from "react-router-dom";
 import RandomImage from "./RandomImage";
 import RandomQuote from "./Quotes/RandomQuote";
@@ -42,8 +41,8 @@ function Timer() {
         currentSectionIndex={currentSectionIndex}
         setCurrentSectionIndex={setCurrentSectionIndex}
       />
-      <Save saved={saved} setSaved={setSaved} 
-      sections={sections} save={save} setSave={setSave} />
+      <OpenSaveDialogButton saved={saved} 
+      setSave={setSave} />
       <RandomQuote />
       <RandomImage />
     </main>

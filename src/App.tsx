@@ -3,7 +3,7 @@ import {  Route, Routes } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Timer from './Timer';
-import Saved from './Meditation/Saved';
+import Saved from './Meditation/SavedMeditations';
 import "./App.css";
 import Quotes from './Quotes/Quotes';
 import Images from './Images';

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./Save.css";
 import type {
   MeditationSaveProps,
   StorageMeditation,
@@ -16,9 +15,9 @@ const SaveDialog = (meditationSaveProps: MeditationSaveProps) => {
 
 
   return (
-    <dialog className={meditationSaveProps.save ? "xd" : ""} open={meditationSaveProps.save}>
+    <dialog open={meditationSaveProps.save}>
       <label htmlFor="name">
-        Name Of Meditation {meditationSaveProps.save.toString()}
+        Name Of Meditation 
       </label>
       <input
         id="name"

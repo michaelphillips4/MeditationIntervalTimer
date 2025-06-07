@@ -4,7 +4,7 @@ import {
   removeMeditationFromLocalStorage,
 } from "../Utils/localStorage";
 import type { StorageMeditation } from "../Utils/typeDefinitions";
-import "./Saved.css";
+import "./SavedMeditations.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import FadeOutText from "../FadeOutText";
@@ -80,7 +80,7 @@ const Saved = () => {
           </li>
         ))}
       </ol>
- <RandomQuote />
+      <RandomQuote />
       <RandomImage />
     </main>
   );

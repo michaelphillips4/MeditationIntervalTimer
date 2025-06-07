@@ -1,22 +1,20 @@
-import "./Save.css";
-import type { MeditationSaveProps } from "../Utils/typeDefinitions";
-
+import type { OpenSaveDialogButtonProps } from "../Utils/typeDefinitions";
 import FadeOutText from "../FadeOutText";
 
-const Save = (meditationSaveProps: MeditationSaveProps) => {
+const OpenSaveDialogButton = (props: OpenSaveDialogButtonProps) => {
   return (
     <div>
       <button
         className="save-button"
         onClick={() => {
-          meditationSaveProps.setSave(true);
+          props.setSave(true);
           const elem = document.getElementById("main");
           elem?.classList.add("blur");
         }}
       >
         Save
       </button>
-      {meditationSaveProps.saved && (
+      {props.saved && (
         <FadeOutText
           text="Meditation saved successfully! You will see it listed in the Saved Section."
           duration={3000}
@@ -26,4 +24,4 @@ const Save = (meditationSaveProps: MeditationSaveProps) => {
   );
 };
 
-export default Save;
+export default OpenSaveDialogButton;

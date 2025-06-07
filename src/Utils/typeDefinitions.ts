@@ -30,6 +30,13 @@ interface MeditationSaveProps {
   setSave: (saved: boolean) => void;
 }
 
+interface OpenSaveDialogButtonProps
+{
+  saved: boolean;
+  setSave: (save: boolean) => void;
+}
+
+
 interface MeditationLoadProps {
   setSections: (sections: Section[]) => void;
 }
@@ -53,4 +60,5 @@ export type {
   StorageMeditation,
   StorageMeditations,
   MeditationLoadProps,
+  OpenSaveDialogButtonProps
 };
