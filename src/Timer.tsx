@@ -7,10 +7,13 @@ import Save from "./Meditation/Save";
 import { useLocation } from "react-router-dom";
 import RandomImage from "./RandomImage";
 import RandomQuote from "./Quotes/RandomQuote";
+import SaveDialog from "./Meditation/SaveDialog";
 
 function Timer() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(-1);
   const [name, setName] = useState("Meditation ");
+  const [save, setSave] = useState<boolean>(false);
+  const [saved, setSaved] = useState<boolean>(false);
   const [sections, setSections] = useState<Section[]>([
     { duration: 10, sound: "bowl" },
   ]);
@@ -25,7 +28,8 @@ function Timer() {
   }, []);
 
   return (
-    <main>
+    <>
+    <main id="main">
       <Meditation
         sections={sections}
         setSections={setSections}
@@ -38,10 +42,14 @@ function Timer() {
         currentSectionIndex={currentSectionIndex}
         setCurrentSectionIndex={setCurrentSectionIndex}
       />
-      <Save sections={sections} />
+      <Save saved={saved} setSaved={setSaved} 
+      sections={sections} save={save} setSave={setSave} />
       <RandomQuote />
       <RandomImage />
     </main>
+    <SaveDialog saved={saved} setSaved={setSaved} 
+      sections={sections} save={save} setSave={setSave} />
+    </>
   );
 }
 

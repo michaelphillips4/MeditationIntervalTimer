@@ -11,36 +11,46 @@ interface SectionProps {
 interface MeditationProps {
   sections: Section[];
   setSections: (sections: Section[]) => void;
-  name:string;
-   currentSectionIndex:number;
-  setCurrentSectionIndex: (currentSectionIndex:number) => void;
+  name: string;
+  currentSectionIndex: number;
+  setCurrentSectionIndex: (currentSectionIndex: number) => void;
 }
 
 interface MeditationControlsProps {
   sections: Section[];
-  currentSectionIndex:number;
-  setCurrentSectionIndex: (currentSectionIndex:number) => void;
+  currentSectionIndex: number;
+  setCurrentSectionIndex: (currentSectionIndex: number) => void;
 }
 
 interface MeditationSaveProps {
   sections: Section[];
+  saved: boolean;
+  setSaved: (saved: boolean) => void;
+  save: boolean;
+  setSave: (saved: boolean) => void;
 }
 
 interface MeditationLoadProps {
-    setSections: (sections: Section[]) => void;
+  setSections: (sections: Section[]) => void;
 }
 
-interface StorageMeditation{
+interface StorageMeditation {
   stages: Section[];
   name: string;
-  date: string; 
+  date: string;
 }
 
 interface StorageMeditations {
   meditations: StorageMeditation[];
-  
 }
 
-export type { Section, SectionProps, MeditationProps, MeditationControlsProps, MeditationSaveProps, StorageMeditation, StorageMeditations, MeditationLoadProps };
-
-
+export type {
+  Section,
+  SectionProps,
+  MeditationProps,
+  MeditationControlsProps,
+  MeditationSaveProps,
+  StorageMeditation,
+  StorageMeditations,
+  MeditationLoadProps,
+};

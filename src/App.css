@@ -11,3 +11,10 @@ main {
 button:hover{
    filter: brightness(0.9);
 }
+
+
+
+.blur {
+  opacity: 0.5;
+}
+
