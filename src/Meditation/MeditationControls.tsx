@@ -82,6 +82,8 @@ const MeditationControls = (
     setIsRunning(true);
     setIsPaused(false);
     setSeconds(0);
+    const b = document.getElementById("button-start") as HTMLButtonElement;
+    b.scrollIntoView();
   };
 
   const handlePause = () => setIsPaused(!isPaused);
@@ -109,7 +111,7 @@ const MeditationControls = (
       {isRunning && (
         <>
           <br />
-          <button onClick={handlePause}>
+          <button onClick={handlePause} id="button-resume">
             {isPaused ? "Resume " : "Pause "} Meditation
           </button>
           <button onClick={handleStop}>Stop Meditation</button>

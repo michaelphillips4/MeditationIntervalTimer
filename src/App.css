@@ -10,6 +10,8 @@ main {
   max-width: 100%;
   height: auto;
   border-radius: 10px;
+  animation-name: image-keyframe;
+  animation-duration: 4s;
 }
 
 button:hover {
@@ -32,3 +34,9 @@ dialog {
     opacity: 1;
     z-index: 900;
 }
+
+
+@keyframes image-keyframe {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }

@@ -21,4 +21,11 @@ blockquote:after {
 
 .quote{
     margin-bottom: 20px;
+    animation-name: quote-keyframe;
+    animation-duration: 2s;
 }
+
+@keyframes quote-keyframe {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
