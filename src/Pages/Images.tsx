@@ -14,8 +14,7 @@ function Images() {
   const images = [pic0, pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9];
  
   return (
-    <main>
-      <h2>Images</h2>
+  
       <ol>
         {images.map((e, index) => (
           <li key={index}>
@@ -28,7 +27,7 @@ function Images() {
           </li>
         ))}
       </ol>
-    </main>
+ 
   );
 }
 

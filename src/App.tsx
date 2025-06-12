@@ -1,12 +1,12 @@
 
 import {  Route, Routes } from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Timer from './Timer';
-import Saved from './Meditation/SavedMeditations';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Timer from './Pages/Timer';
+import Saved from './Pages/Saved';
 import "./App.css";
-import Quotes from './Quotes/Quotes';
-import Images from './Images';
+import Quotes from './Pages/Quotes';
+import Images from './Pages/Images';
 
 const App = () => (
   

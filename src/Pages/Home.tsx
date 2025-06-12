@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import lotus from "/images/lotus.png";
 import "./Home.css";
-import RandomImage from "./RandomImage";
-import RandomQuote from "./Quotes/RandomQuote";
+import RandomImage from "../RandomImage";
+import RandomQuote from "../Quotes/RandomQuote";
 
 function Home() {
 

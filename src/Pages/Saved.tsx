@@ -4,12 +4,11 @@ import {
   removeMeditationFromLocalStorage,
 } from "../Utils/localStorage";
 import type { StorageMeditation } from "../Utils/typeDefinitions";
-import "./SavedMeditations.css";
+import "./Saved.css";
 import { FaTrashAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import FadeOutText from "../FadeOutText";
-import RandomImage from "../RandomImage";
-import RandomQuote from "../Quotes/RandomQuote";
+import ImageAndQuote from "../ImageAndQuote";
 
 const Saved = () => {
   const [items, setItems] = useState<StorageMeditation[]>([]);
@@ -39,7 +38,7 @@ const Saved = () => {
 
   return (
     <>
-      <h3>Saved Meditations</h3>
+      <h2>Saved Meditations</h2>
 
       {items.length === 0 && (
         <FadeOutText
@@ -80,8 +79,8 @@ const Saved = () => {
           </li>
         ))}
       </ol>
-      <RandomQuote />
-      <RandomImage />
+      <ImageAndQuote />
+    
     </>
   );
 };

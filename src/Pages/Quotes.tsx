@@ -1,12 +1,12 @@
 
-import Quote from "./Quote";
-import data from "./quotes.json";
+import Quote from "../Quotes/Quote";
+import data from "../Quotes/quotes.json";
 
 const Quotes = () => {
 
   return (
   
-      <main>
+      <>
         <h2 className="center">Quotes</h2>
         <ol>
           {data.quotes.map((q, index) => (
@@ -16,7 +16,7 @@ const Quotes = () => {
           ))}
         </ol>
 
-      </main>
+      </>
 
   );
 };

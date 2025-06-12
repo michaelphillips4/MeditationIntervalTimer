@@ -1,12 +1,11 @@
 import { useEffect, useState} from "react";
-import type { Section, StorageMeditation } from "./Utils/typeDefinitions";
-import Meditation from "./Meditation/Meditation";
-import MeditationControls from "./Meditation/MeditationControls";
-import OpenSaveDialogButton from "./Meditation/OpenSaveDialogButton";
+import type { Section, StorageMeditation } from "../Utils/typeDefinitions";
+import Meditation from "../Meditation/Meditation";
+import MeditationControls from "../Meditation/MeditationControls";
+import OpenSaveDialogButton from "../Meditation/OpenSaveDialogButton";
 import { useLocation } from "react-router-dom";
-
-import SaveDialog from "./Meditation/SaveDialog";
-import ChildC from "./ImageAndQuote";
+import SaveDialog from "../Meditation/SaveDialog";
+import ImageAndQuote from "../ImageAndQuote";
 
 function Timer() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState<number>(-1);
@@ -42,7 +41,7 @@ function Timer() {
           setCurrentSectionIndex={setCurrentSectionIndex}
         />
         <OpenSaveDialogButton saved={saved} setSave={setSave} />
-        <ChildC/>
+        <ImageAndQuote/>
         
       </div>
    

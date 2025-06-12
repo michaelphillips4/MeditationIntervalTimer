@@ -14,7 +14,7 @@ root.render(
       <App />
       </main>
       <p className="center">
-        v2.2 By Michael Phillips{" "}
+        v2.3 By Michael Phillips
         <a href="http:\\orca-tools.com">http:\\orca-tools.com</a>
       </p>
     </BrowserRouter>
