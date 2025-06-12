@@ -38,7 +38,7 @@ const Saved = () => {
   };
 
   return (
-    <main>
+    <>
       <h3>Saved Meditations</h3>
 
       {items.length === 0 && (
@@ -82,7 +82,7 @@ const Saved = () => {
       </ol>
       <RandomQuote />
       <RandomImage />
-    </main>
+    </>
   );
 };
 

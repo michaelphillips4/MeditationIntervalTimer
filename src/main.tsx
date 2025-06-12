@@ -10,9 +10,11 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Heading />
+      <main>
       <App />
+      </main>
       <p className="center">
-        v2.1 By Michael Phillips{" "}
+        v2.2 By Michael Phillips{" "}
         <a href="http:\\orca-tools.com">http:\\orca-tools.com</a>
       </p>
     </BrowserRouter>

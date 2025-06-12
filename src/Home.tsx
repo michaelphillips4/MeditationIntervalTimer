@@ -7,7 +7,7 @@ import RandomQuote from "./Quotes/RandomQuote";
 function Home() {
 
   return (
-    <main>
+    <>
       <p>
         This is a simple meditation timer. It allows you to set different
         sections for your meditation practice. You can customize the duration of
@@ -25,7 +25,7 @@ function Home() {
       <p className="center">
         <RandomImage />
       </p>
-    </main>
+    </>
   );
 }
 

@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 function About() {
   return (
     <>
-      <main className="info">
+      <>
         <h2>About</h2>
         <p>
           This is a simple meditation timer that allows you to set different
@@ -95,7 +95,7 @@ function About() {
         <div className="center">
           <RandomImage />
         </div>
-      </main>
+      </>
     </>
   );
 }

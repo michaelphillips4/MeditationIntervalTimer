@@ -7,12 +7,70 @@ nav {
   margin-left: 10px;
 }
 
-a.nav-item{
+a.nav-item {
   color: rgb(172, 172, 172);
   text-decoration: none;
 }
 
 a.active {
   color: white;
-  border-bottom: 2px  rgb(172, 172, 172) solid;
+  font-weight: bolder;
 }
+
+#heading {
+  font-size: xx-large;
+}
+
+.topnav {
+  background-color: black;
+  position: absolute;
+  right: 0;
+  opacity: 0; /* Start invisible */
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 0.5s, transform 0.5s; /* Smooth transition */
+  border: 0.5px solid silver;
+  
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 0 0 31px;
+}
+
+.topnav.active {
+ 
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Move to original position */
+}
+
+.topnav a {
+  color: white;
+  padding: 14px 50px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  text-align: right;
+}
+
+#burger {
+  color: white;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top:20px ;
+  margin-right: 10px;
+  background-color: black;
+  font-size: xx-large;
+}
+
+#burger:hover {
+  cursor: pointer;
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1; /* Fade in */
+    transform: translateX(0); /* Move to original position */
+  }
+}
+
+

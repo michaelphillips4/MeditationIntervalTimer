@@ -28,7 +28,7 @@ function Timer() {
 
   return (
     <>
-      <main id="main">
+      <div id="main" className="center">
         <Meditation
           sections={sections}
           setSections={setSections}
@@ -44,7 +44,7 @@ function Timer() {
         <OpenSaveDialogButton saved={saved} setSave={setSave} />
         <ChildC/>
         
-      </main>
+      </div>
    
       <SaveDialog
         saved={saved}
