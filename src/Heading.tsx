@@ -5,8 +5,8 @@ const Heading = () => (
   <>
     <header>
       <h1>Meditation Timer</h1>
-      
-    </header><Menu />
+      <Menu />
+    </header>
   </>
 );
 

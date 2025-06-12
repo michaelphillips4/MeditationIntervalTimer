@@ -18,20 +18,12 @@ export function Menu() {
         <GiHamburgerMenu />
       </a>
 
-      <div className={"topnav " + (menuState === true ? "active" : "")}>
+      <div className={"top-nav " + (menuState === true ? "opened" : "closed")}>
         <div id="links">
-          <NavLink to="/" className="nav-item" onClick={clearOpacity} end>
-            Home
-          </NavLink>
-          <NavLink to="/timer" className="nav-item" onClick={clearOpacity}>
-            Timer
-          </NavLink>
-          <NavLink to="/Saved" className="nav-item" onClick={clearOpacity}>
-            Saved
-          </NavLink>
-          <NavLink to="/about" className="nav-item" onClick={clearOpacity}>
-            About
-          </NavLink>
+          <NavLink to="/" onClick={clearOpacity} end>Home</NavLink>
+          <NavLink to="/timer" onClick={clearOpacity}>Timer</NavLink>
+          <NavLink to="/Saved" onClick={clearOpacity}>Saved</NavLink>
+          <NavLink to="/about" onClick={clearOpacity}>About</NavLink>
         </div>
       </div>
     </nav>

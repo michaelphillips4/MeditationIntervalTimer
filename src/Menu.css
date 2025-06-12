@@ -1,27 +1,9 @@
-nav {
-  padding: 0;
-  padding-bottom: 10px;
-}
-
-.nav-item {
-  margin-left: 10px;
-}
-
-a.nav-item {
-  color: rgb(172, 172, 172);
-  text-decoration: none;
-}
-
-a.active {
-  color: white;
-  font-weight: bolder;
-}
 
 #heading {
   font-size: xx-large;
 }
 
-.topnav {
+.top-nav {
   background-color: black;
   position: absolute;
   right: 0;
@@ -35,20 +17,31 @@ a.active {
   border-radius: 0 0 0 31px;
 }
 
-.topnav.active {
- 
+.top-nav.opened {
   opacity: 1; /* Fade in */
   transform: translateX(0); /* Move to original position */
 }
 
-.topnav a {
+
+.top-nav.closed {
+  opacity: 0; /* Fade in */
+  transform: translateX(0); /* Move to original position */
+}
+
+.top-nav a {
   color: white;
   padding: 14px 50px;
   text-decoration: none;
   font-size: 17px;
   display: block;
-  text-align: right;
+  margin-left: 0;
 }
+
+
+
+.top-nav a.active {
+  font-weight: bolder ;
+ }
 
 #burger {
   color: white;
@@ -56,10 +49,10 @@ a.active {
   position: absolute;
   right: 0;
   top: 0;
-  margin-top:20px ;
-  margin-right: 10px;
+  padding:10px ;
+  padding-top: 20px;
   background-color: black;
-  font-size: xx-large;
+  font-size:xx-large;
 }
 
 #burger:hover {
