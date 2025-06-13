@@ -1,29 +1,29 @@
-#heading {
-  font-size: xx-large;
-}
 
 .top-nav {
   background-color: black;
   position: absolute;
   right: 0;
   opacity: 0; 
-  transform: translateX(0);
+
   transition: opacity 0.5s, transform 0.5s;
   border: 0.5px solid var(--bg-highlight);
   border-top: 0;
   border-right: 0;
   border-radius: 0 0 0 31px;
   z-index: 100;
+  
 }
 
 .top-nav.opened {
   opacity: 1;
-  transform: translateX(0); 
+ animation: slide-in 1s ease-in-out;
+
 }
 
 .top-nav.closed {
   opacity: 0;
-  transform: translateX(100%);
+
+
 }
 
 .top-nav a {
@@ -60,9 +60,13 @@
   cursor: pointer;
 }
 
-@keyframes slideIn {
+
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
   to {
-    opacity: 1; /* Fade in */
-    transform: translateX(0); /* Move to original position */
+    transform: translateX(0);
   }
 }

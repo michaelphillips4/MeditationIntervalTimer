@@ -15,7 +15,7 @@ function Images() {
  
   return (
   
-      <ol>
+      <ol className="unstyled-list">
         {images.map((e, index) => (
           <li key={index}>
             <img

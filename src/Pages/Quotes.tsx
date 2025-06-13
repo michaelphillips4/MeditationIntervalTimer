@@ -8,7 +8,7 @@ const Quotes = () => {
   
       <>
         <h2 className="center">Quotes</h2>
-        <ol>
+        <ol className="unstyled-list">
           {data.quotes.map((q, index) => (
             <li key={index} >
               <Quote quote={q.quote} by={q.by} />

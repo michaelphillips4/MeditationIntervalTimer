@@ -38,7 +38,7 @@ const Meditation = (meditationProps: MeditationProps) => {
       <fieldset>
         <legend>{meditationProps.name.substring(0,40)}</legend>
 
-        <ol className="meditation-sections">
+        <ol className="unstyled-list">
           {meditationProps.sections.map((section, index) => (
             <li key={index} className={`section ${meditationProps.currentSectionIndex === index ? 'current-section':''}`}>
               <MeditationSection
