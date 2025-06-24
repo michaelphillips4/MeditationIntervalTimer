@@ -19,12 +19,12 @@ import type { StorageMeditation } from "./typeDefinitions";
   }
 
 
-  const removeMeditationFromLocalStorage = (meditation: StorageMeditation) => {
+  const removeMeditationFromLocalStorage = (index:number) => {
     const existingMeditations = localStorage.getItem(key);
     if (existingMeditations) {
       const meditations: StorageMeditation[] = JSON.parse(existingMeditations);
       const updatedMeditations = meditations.filter(
-        (m) => m.name !== meditation.name || m.date !== meditation.date
+        (_m,i) => i!==index
       );
       localStorage.setItem(key, JSON.stringify(updatedMeditations));
     }

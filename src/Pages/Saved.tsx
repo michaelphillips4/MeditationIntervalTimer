@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   readFromLocalStorage,
   removeMeditationFromLocalStorage,
@@ -6,30 +6,22 @@ import {
 import type { StorageMeditation } from "../Utils/typeDefinitions";
 import "./Saved.css";
 import { FaTrashAlt } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import FadeOutText from "../FadeOutText";
 import ImageAndQuote from "../ImageAndQuote";
+import lotus from "/images/lotus.png";
 
 const Saved = () => {
-  const [items, setItems] = useState<StorageMeditation[]>([]);
+  const [items, setItems] = useState<StorageMeditation[]>(readFromLocalStorage());
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const items = readFromLocalStorage();
-    if (items) {
-      setItems(items);
-    }
-  }, []);
-
-  const removeMeditation = (meditation: StorageMeditation) => {
-    removeMeditationFromLocalStorage(meditation);
-    setItems((prevItems) =>
-      prevItems.filter(
-        (item) => item.name !== meditation.name || item.date !== meditation.date
-      )
-    );
+  const removeMeditation = (index:number) => {
+      console.log(index);
+    removeMeditationFromLocalStorage(index);
+    setItems(readFromLocalStorage())
   };
 
-  const navigate = useNavigate();
+
 
   const redirectLoad = (meditation: StorageMeditation) => {
     const dataToPass: StorageMeditation = meditation;
@@ -41,12 +33,21 @@ const Saved = () => {
       <h2>Saved Meditations</h2>
 
       {items.length === 0 && (
+        <>
         <FadeOutText
           text={
-            "You haven't saved any meditations yet. When you do they will be listed here. To Save a meditation create one in Timer and press the Save button. "
+            "You haven't saved any meditations yet. When you do they will be listed here. "
           }
           duration={12000}
         />
+         <p className="center">
+        <NavLink to="/timer" className="button">
+          <img width="48" height="48" src={lotus} alt="lotus" />
+          <br />
+          Click here to create your meditation.
+        </NavLink>
+      </p>
+</>
       )}
 
       <ol>
@@ -66,14 +67,9 @@ const Saved = () => {
                 {meditation.stages.map((e) => e.duration).join("mins,")}mins).
               </div>
               <div className="saved-item-last">
-                <i
-                  className="fa fa-trash section-remove right"
-                  title="Remove this meditation ."
-                  role="button"
-                  onClick={() => removeMeditation(meditation)}
-                >
+                <button onClick={()=>removeMeditation(index)}>
                   <FaTrashAlt />
-                </i>
+                </button>
               </div>
             </div>
           </li>

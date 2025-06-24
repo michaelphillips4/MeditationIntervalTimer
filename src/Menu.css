@@ -16,14 +16,14 @@
 
 .top-nav.opened {
   opacity: 1;
- animation: slide-in 1s ease-in-out;
+  animation: slide-in 0.5s ease-in-out;
 
 }
 
 .top-nav.closed {
   opacity: 0;
-
-
+  right:0;
+  width:0;
 }
 
 .top-nav a {

@@ -4,20 +4,21 @@ import type {
   StorageMeditation,
 } from "../Utils/typeDefinitions";
 import { addToLocalStorage } from "../Utils/localStorage";
+import { useNavigate } from "react-router-dom";
 
 const SaveDialog = (meditationSaveProps: MeditationSaveProps) => {
   const [meditationName, setMeditationName] = useState<string>("");
-
-  const removeBackGroundBlur = ()=>{
+  const navigate = useNavigate();
+  const removeBackGroundBlur = () => {
     const elem = document.getElementById("main");
-          elem?.classList.remove("blur");
+    elem?.classList.remove("blur");
   }
 
 
   return (
     <dialog open={meditationSaveProps.save}>
       <label htmlFor="name">
-        Name Of Meditation 
+        Name Of Meditation
       </label>
       <input
         id="name"
@@ -46,14 +47,16 @@ const SaveDialog = (meditationSaveProps: MeditationSaveProps) => {
             meditationSaveProps.setSave(false);
             meditationSaveProps.setSaved(true);
             removeBackGroundBlur();
+            navigate("/saved");
           }
         }}
       >
         Save
       </button>
-      <button onClick={() =>{ 
-        meditationSaveProps.setSave(false); 
-        removeBackGroundBlur()}}>Close</button>
+      <button onClick={() => {
+        meditationSaveProps.setSave(false);
+        removeBackGroundBlur()
+      }}>Close</button>
     </dialog>
   );
 };

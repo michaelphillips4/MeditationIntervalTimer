@@ -17,6 +17,7 @@ const App = () => (
       <Route path="/saved" element={<Saved />} />
       <Route path="/quotes" element={<Quotes />} />
       <Route path="/images" element={<Images />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   
 );

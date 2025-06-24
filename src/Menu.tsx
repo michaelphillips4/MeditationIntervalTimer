@@ -24,8 +24,7 @@ export function Menu() {
           <NavLink to="/timer" onClick={clearOpacity}>Timer</NavLink>
           <NavLink to="/Saved" onClick={clearOpacity}>Saved</NavLink>
           <NavLink to="/about" onClick={clearOpacity}>About</NavLink>
-          <NavLink to="/quotes" onClick={clearOpacity}>Quotes</NavLink>
-          <NavLink to="/images" onClick={clearOpacity}>Images</NavLink>
+         
         </div>
       </div>
     </nav>
