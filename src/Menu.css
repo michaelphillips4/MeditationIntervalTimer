@@ -4,26 +4,30 @@
   position: absolute;
   right: 0;
   opacity: 0; 
-
+ 
   transition: opacity 0.5s, transform 0.5s;
   border: 0.5px solid var(--bg-highlight);
   border-top: 0;
   border-right: 0;
   border-radius: 0 0 0 31px;
-  z-index: 100;
+ 
   
 }
 
 .top-nav.opened {
   opacity: 1;
   animation: slide-in 0.5s ease-in-out;
-
+  width: 200px;
+  z-index: 1;
+  
 }
 
 .top-nav.closed {
   opacity: 0;
   right:0;
   width:0;
+  z-index: 0;
+  display: none;
 }
 
 .top-nav a {

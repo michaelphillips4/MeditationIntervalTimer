@@ -19,6 +19,10 @@
 .saved-item-last {
   align-self: center;
   padding: 10px;
+
+  :hover {
+   cursor: pointer;
+  } 
 }
 
 .saved-item-text {

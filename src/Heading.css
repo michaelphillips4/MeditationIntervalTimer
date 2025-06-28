@@ -6,6 +6,8 @@ header {
   text-align: center;
   background-color: black;
   color: white;
+  position: sticky;
+  top: 0;
 }
 
 h1 {

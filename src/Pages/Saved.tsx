@@ -67,9 +67,9 @@ const Saved = () => {
                 {meditation.stages.map((e) => e.duration).join("mins,")}mins).
               </div>
               <div className="saved-item-last">
-                <button onClick={()=>removeMeditation(index)}>
+                <span onClick={()=>removeMeditation(index)} role="button" title={`Delete ${meditation.name} meditation`}>
                   <FaTrashAlt />
-                </button>
+                </span>
               </div>
             </div>
           </li>
